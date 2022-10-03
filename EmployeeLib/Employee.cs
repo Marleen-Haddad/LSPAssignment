@@ -1,16 +1,17 @@
-﻿namespace EmployeeLib
+﻿using EmployeeLib.Interfaces;
+using System;
+
+namespace EmployeeLib
 {
-    public class Employee
+    public abstract class Employee : IEmployee, IEmployeeWithManager
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Employee Manager { get; set; } = null;
         public decimal Salary { get; set; }
+        public Employee Manager { get; set; }
 
-        public virtual void AssignManager(Employee manager)
+        public void AssignManager(Employee manager)
         {
-            // Simulate doing other tasks here - otherwise, this should be
-            // a property set statement, not a method.
             Manager = manager;
         }
 
@@ -19,6 +20,11 @@
             decimal baseAmount = 12.50M;
 
             Salary = baseAmount + (rank * 2);
+        }
+
+        public void GeneratePerformanceReview()
+        {
+            Console.WriteLine("I'm reviewing a direct report's performance.");
         }
     }
 }
