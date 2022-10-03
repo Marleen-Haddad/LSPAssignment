@@ -6,7 +6,7 @@ namespace EmployeeLib.Interfaces
 {
     public interface IEmployeeWithManager
     {
-        public Employee Manager { get; set; }
-        public void AssignManager(Employee manager);
+        public EmployeeWithManager Manager { get; set; }
+        public void AssignManager(EmployeeWithManager manager);
     }
 }
