@@ -16,31 +16,31 @@ namespace LSP {
             emp.LastName = "Lally";
             emp.CalculatePerHourRate(2);
 
-            List<EmployeeWithManager> employeesWithManager = new List<EmployeeWithManager>();
-            EmployeeWithManager sales = new Sales();
+            List<Manager> employeesHasManager = new List<Manager>();
+            Manager sales = new Sales();
             sales.AssignManager(manager);
             sales.FirstName = "Motasem";
             sales.LastName = "Armouti";
+            employeesHasManager.Add(sales);
 
-            employeesWithManager.Add(sales);
 
-            EmployeeWithManager leadDeveloper = new LeadDeveloper();
+            Manager leadDeveloper = new LeadDeveloper();
             leadDeveloper.AssignManager(manager);
             leadDeveloper.FirstName = "Rasheed";
             leadDeveloper.LastName = "Rabatta";
 
-            employeesWithManager.Add(leadDeveloper);
+            employeesHasManager.Add(leadDeveloper);
 
-            EmployeeWithManager developer = new Developer();
+            Manager developer = new Developer();
             developer.AssignManager(leadDeveloper);
             developer.FirstName = "Marleen";
             developer.LastName = "Haddad";
 
-            employeesWithManager.Add(developer);
+            employeesHasManager.Add(developer);
 
-            foreach (var employeeWithManager in employeesWithManager)
+            foreach (var EmployeeHasManager in employeesHasManager)
             {
-                Console.WriteLine($"{employeeWithManager.FirstName}'s salary is ${employeeWithManager.Salary}/hour.");
+                Console.WriteLine($"{EmployeeHasManager.FirstName}'s salary is ${EmployeeHasManager.Salary}/hour.");
             }
 
             Console.WriteLine($"{ emp.FirstName }'s salary is ${ emp.Salary }/hour.");

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EmployeeLib
 {
-    public class Sales : EmployeeWithManager
+    public class Sales : Manager
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EmployeeLib
 {
-    public class LeadDeveloper : EmployeeWithManager
+    public class LeadDeveloper : Manager
     {
     }
 }

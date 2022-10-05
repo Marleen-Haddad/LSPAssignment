@@ -3,14 +3,14 @@ using System;
 
 namespace EmployeeLib
 {
-    public abstract class EmployeeWithManager : IEmployee, IEmployeeWithManager
+    public abstract class EmployeeHasManager : IEmployee, IEmployeeWithManager
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public decimal Salary { get; set; }
-        public EmployeeWithManager Manager { get; set; }
+        public Manager Manager { get; set; }
 
-        public void AssignManager(EmployeeWithManager manager)
+        public void AssignManager(Manager manager)
         {
             Manager = manager;
         }
